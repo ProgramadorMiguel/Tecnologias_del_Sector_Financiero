@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.cnebrera.uc3.tech.lesson9.proto";
+option java_outer_classname = "Lesson9";
+
+// --- Equivalente a com.cnebrera.uc3.tech.lesson9.model.Instrument ---
+message Instrument {
+  // a int that identifies the instrument
+  int32 instrumentId = 1;
+
+  // human understood representation of the security
+  string symbol = 2;
+}
+
+// --- Equivalente a com.cnebrera.uc3.tech.lesson9.model.ReferenceData ---
+message ReferenceData {
+  // a int that identifies the market
+  int32 marketId = 1;
+
+  // a String with the algorithm identifier
+  string algorithmIdentifier = 2;
+
+  // lista de instrumentos -> en Java habrá métodos addInstrument(...)
+  repeated Instrument instrument = 3;
+}
